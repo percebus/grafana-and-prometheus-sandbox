@@ -11,7 +11,7 @@ services:
       #  ./containers:/ # TODO?
       - ./containers/etc/alertmanager:/etc/alertmanager
     command:
-      - "--config.file=/etc/alertmanager/config.yml"
+      - "--config.file=/etc/alertmanager/pagerduty.yml"
       - "--storage.path=/alertmanager"
 
   prometheus:
