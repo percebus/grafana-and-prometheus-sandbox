@@ -418,16 +418,12 @@
       "id": 2,
       "options": {
         "legend": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "displayMode": "table",
           "placement": "right",
           "showLegend": true
         },
-        "timezone": [
-          "browser"
-        ],
+        "timezone": ["browser"],
         "tooltip": {
           "mode": "single",
           "sort": "none"

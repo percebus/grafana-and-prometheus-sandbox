@@ -2,4 +2,4 @@
 
 ## Prometheus
 
-* [ ] Merge `docker/desktop` & `jvm/memory` in a single (non-`global`? )config
+- [ ] Merge `docker/desktop` & `jvm/memory` in a single (non-`global`? )config
