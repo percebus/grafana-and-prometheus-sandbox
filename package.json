@@ -1,0 +1,27 @@
+{
+  "name": "grafana-and-prometheus-sandbox",
+  "version": "0.1.0",
+  "description": "grafana & prometheus playground sandbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/percebus/grafana-and-prometheus-sandbox.git"
+  },
+  "keywords": [
+    "grafana",
+    "prometheus",
+    "alertmanager"
+  ],
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/percebus/grafana-and-prometheus-sandbox/issues"
+  },
+  "homepage": "https://github.com/percebus/grafana-and-prometheus-sandbox#readme",
+  "devDependencies": {
+    "prettier": "^2.8.1"
+  }
+}
