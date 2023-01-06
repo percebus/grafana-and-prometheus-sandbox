@@ -29,7 +29,8 @@ services:
       - ./containers/etc/prometheus:/etc/prometheus
       - ./data/prometheus:/prometheus
     command:
-      - "--config.file=/etc/prometheus/config.yml"
+      # - "--config.file=/etc/prometheus/jvm/memory/mac.config.yml" # XXX?
+      - "--config.file=/etc/prometheus/docker/desktop/windows.config.yml"
       - "--storage.tsdb.path=/prometheus"
       - "--web.console.libraries=/etc/prometheus/console_libraries"
       - "--web.console.templates=/etc/prometheus/consoles"

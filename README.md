@@ -6,6 +6,7 @@
 
 - [Monitoring up and running with Docker Compose, Prometheus and Grafana](https://dzlab.github.io/monitoring/2021/12/30/monitoring-stack-docker/)
 - [DOCKER - PROMETHEUS AND GRAFANA WITH DOCKER-COMPOSE](https://www.bogotobogo.com/DevOps/Docker/Docker_Prometheus_Grafana.php)
+- [Collect Docker metrics with Prometheus](https://docs.docker.com/config/daemon/prometheus/)
 
 ### Prometheus
 
