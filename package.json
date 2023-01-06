@@ -4,6 +4,11 @@
   "description": "grafana & prometheus playground sandbox",
   "main": "index.js",
   "scripts": {
+    "prettier": "prettier .",
+    "prettier:check": "npm run prettier -- --check",
+    "prettier:write": "npm run prettier -- --write",
+    "lint": "npm run prettier:check",
+    "style": "npm run prettier:write",
     "test": "exit 0"
   },
   "repository": {
