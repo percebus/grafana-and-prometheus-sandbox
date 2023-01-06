@@ -12,11 +12,15 @@
 ### Prometheus
 
 - [CONFIGURATION](https://prometheus.io/docs/alerting/latest/configuration/)
+- [PUSHING METRICS](https://prometheus.io/docs/instrumenting/pushing/)
+- [WHEN TO USE THE PUSHGATEWAY](https://prometheus.io/docs/practices/pushing/)
 
 ### Repos
 
-| Contributor                                       | Repository                                                                          |
-| ------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [`Azure`](https://github.com/Azure)               | [`iot-edge-opc-publisher-v1`](https://github.com/Azure/iot-edge-opc-publisher-v1)   |
-| [`Einsteinish`](https://github.com/Einsteinish)   | [`Docker-Compose-Prometheus-and-Grafana`](https://github.com/stefanprodan/dockprom) |
-| [`stefanprodan`](https://github.com/stefanprodan) | [`dockprom`](https://github.com/stefanprodan/dockprom)                              |
+| Contributor                                           | Repository                                                                          |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [`Azure`](https://github.com/Azure)                   | [`iot-edge-opc-publisher-v1`](https://github.com/Azure/iot-edge-opc-publisher-v1)   |
+| [`prometheus-net`](https://github.com/prometheus-net) | [`prometheus-net`](https://github.com/prometheus-net/prometheus-net)                |
+| [`Einsteinish`](https://github.com/Einsteinish)       | [`Docker-Compose-Prometheus-and-Grafana`](https://github.com/stefanprodan/dockprom) |
+| [`stefanprodan`](https://github.com/stefanprodan)     | [`dockprom`](https://github.com/stefanprodan/dockprom)                              |
+| [`hikhvar`](https://github.com/hikhvar)               | [`mqtt2prometheus`](https://github.com/hikhvar/mqtt2prometheus)                     |
