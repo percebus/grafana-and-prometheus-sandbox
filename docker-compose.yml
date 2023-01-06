@@ -1,9 +1,5 @@
 version: "3"
 
-volumes:
-  prometheus_data: {}
-  grafana_data: {}
-
 services:
   alertmanager:
     container_name: alertmanager
@@ -12,7 +8,8 @@ services:
     ports:
       - 9093:9093
     volumes:
-      - ./containers/alertmanager:/etc/alertmanager
+      #  ./containers:/ # TODO?
+      - ./containers/etc/alertmanager:/etc/alertmanager
     command:
       - "--config.file=/etc/alertmanager/config.yml"
       - "--storage.path=/alertmanager"
@@ -28,8 +25,9 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - ./containers/prometheus:/etc/prometheus
-      - prometheus_data:/prometheus
+      # - ./containers:/ # TODO?
+      - ./containers/etc/prometheus:/etc/prometheus
+      - ./data/prometheus:/prometheus
     command:
       - "--config.file=/etc/prometheus/config.yml"
       - "--storage.tsdb.path=/prometheus"
@@ -47,9 +45,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./containers/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
-      - ./containers/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-      - grafana_data:/var/lib/grafana
+      # - ./containers:/ # TODO?
+      - ./containers/etc/grafana:/etc/grafana
+      - ./data/grafana:/var/lib/grafana
     environment:
       - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}
       - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}

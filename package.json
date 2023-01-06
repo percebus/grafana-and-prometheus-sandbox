@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "bower:update": "bower update",
-    "prebower:install": "npm run bower update",
+    "prebower:install": "npm run bower:update",
     "bower:install": "bower install",
     "postinstall": "npm run bower:install",
     "prettier": "prettier .",
@@ -13,6 +13,9 @@
     "prettier:write": "npm run prettier -- --write",
     "lint": "npm run prettier:check",
     "style": "npm run prettier:write",
+    "docker:compose": "docker compose",
+    "docker:compose:build": "npm run docker:compose -- build",
+    "docker:compose:up": "npm run docker:compose -- up",
     "test": "exit 0"
   },
   "repository": {
