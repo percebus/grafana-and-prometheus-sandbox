@@ -30,7 +30,8 @@ scrape_configs:
   # to any timeseries scraped from this config.
   - job_name: "prometheus"
 
-    # metrics_path defaults to '/metrics'    # scheme defaults to 'http'.
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
 
     static_configs:
       - targets: ["host.docker.internal:9090"] # Only works on Docker Desktop for Windows
@@ -39,5 +40,6 @@ scrape_configs:
 
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
+
     static_configs:
       - targets: ["host.docker.internal:9323"]
