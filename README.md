@@ -8,6 +8,7 @@
 - [DOCKER - PROMETHEUS AND GRAFANA WITH DOCKER-COMPOSE](https://www.bogotobogo.com/DevOps/Docker/Docker_Prometheus_Grafana.php)
 - [Collect Docker metrics with Prometheus](https://docs.docker.com/config/daemon/prometheus/)
 - [Metrics Dashboard for OPC Publisher V2.7](https://github.com/Azure/iot-edge-opc-publisher-v1/blob/main/docs/prometheus-metrics/MetricsDashboard.md)
+- [Using Prometheus and Grafana for IoT monitoring](https://cloud.google.com/community/tutorials/cloud-iot-prometheus-monitoring)
 
 ### Prometheus
 
