@@ -478,63 +478,7 @@
   "style": "dark",
   "tags": ["docker"],
   "templating": {
-    "list": [
-      {
-        "current": {
-          "selected": false,
-          "text": ["All"],
-          "value": ["$__all"]
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "P1809F7CD0C75ACF3"
-        },
-        "definition": "label_values(instance)",
-        "description": "Docker container instance (includes port)",
-        "hide": 0,
-        "includeAll": true,
-        "label": "Docker container instance",
-        "multi": true,
-        "name": "docker_container",
-        "options": [],
-        "query": {
-          "query": "label_values(instance)",
-          "refId": "StandardVariableQuery"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "type": "query"
-      },
-      {
-        "current": {
-          "selected": false,
-          "text": ["All"],
-          "value": ["$__all"]
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "P1809F7CD0C75ACF3"
-        },
-        "definition": "label_values(job)",
-        "hide": 0,
-        "includeAll": true,
-        "label": "Pormetheus job name",
-        "multi": true,
-        "name": "prometheus_job",
-        "options": [],
-        "query": {
-          "query": "label_values(job)",
-          "refId": "StandardVariableQuery"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "type": "query"
-      }
-    ]
+    "list": []
   },
   "time": {
     "from": "now-5m",
@@ -544,6 +488,6 @@
   "timezone": "",
   "title": "Docker Service",
   "uid": "l3XN9VhVk",
-  "version": 23,
+  "version": 25,
   "weekStart": ""
 }

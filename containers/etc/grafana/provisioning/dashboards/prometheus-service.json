@@ -119,7 +119,6 @@
             }
           ],
           "mappings": [],
-          "min": -1,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -151,7 +150,7 @@
       "maxPerRow": 4,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": ["last"],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -203,9 +202,21 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": ["All"],
-          "value": ["$__all"]
+          "selected": true,
+          "text": [
+            "alertmanager",
+            "docker:engine",
+            "docker:vad-metrics",
+            "grafana",
+            "prometheus"
+          ],
+          "value": [
+            "alertmanager",
+            "docker:engine",
+            "docker:vad-metrics",
+            "grafana",
+            "prometheus"
+          ]
         },
         "datasource": {
           "type": "prometheus",
@@ -214,7 +225,7 @@
         "definition": "label_values(job)",
         "hide": 0,
         "includeAll": true,
-        "label": "Pormetheus job name",
+        "label": "Job name",
         "multi": true,
         "name": "prometheus_job",
         "options": [],
@@ -227,6 +238,34 @@
         "skipUrlSync": false,
         "sort": 1,
         "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": ["All"],
+          "value": ["$__all"]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P1809F7CD0C75ACF3"
+        },
+        "definition": "label_values(instance)",
+        "description": "including port",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Service instance name",
+        "multi": true,
+        "name": "instance_name",
+        "options": [],
+        "query": {
+          "query": "label_values(instance)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
       }
     ]
   },
@@ -238,6 +277,6 @@
   "timezone": "",
   "title": "Prometheus Service",
   "uid": "Wjb4v2hVz",
-  "version": 8,
+  "version": 12,
   "weekStart": ""
 }
