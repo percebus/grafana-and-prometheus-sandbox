@@ -29,16 +29,6 @@ rule_files:
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: "prometheus"
-
-    # Override the global default
-    # and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
-
-    static_configs:
-      - targets: ["localhost:9090"]
-
   # The job name is added as a label `job=<job_name>`
   # to any timeseries scraped from this config.
   - job_name: "docker:engine"
@@ -47,6 +37,8 @@ scrape_configs:
     static_configs:
       - targets: ["host.docker.internal:9323"]
 
+  # TODO RENAME
+  # - docker:JVM ?
   - job_name: "docker:vad-metrics"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
@@ -54,20 +46,33 @@ scrape_configs:
     static_configs:
       - targets: ["host.docker.internal:9091"]
 
-  - job_name: "docker:prometheus"
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-    static_configs:
-      - targets: ["host.docker.internal:9090"] # Only works on Docker Desktop for Windows
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: "prometheus"
 
-  - job_name: "docker:alertmanager"
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-    static_configs:
-      - targets: ["host.docker.internal:9093"] # Only works on Docker Desktop for Windows
+    # Override the global default
+    # and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
 
-  - job_name: "docker:grafana"
+    static_configs:
+      - targets: [
+            "localhost:9090",
+            # "host.docker.internal:9090", # Only works on Docker Desktop for Windows
+          ]
+
+  - job_name: "alertmanager"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     static_configs:
-      - targets: ["host.docker.internal:3000"] # Only works on Docker Desktop for Windows
+      - targets: [
+            "localhost:9093",
+            # "host.docker.internal:9093", # Only works on Docker Desktop for Windows
+          ]
+
+  - job_name: "grafana"
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+    static_configs:
+      - targets: [
+            "localhost:3000",
+            # "host.docker.internal:3000", # Only works on Docker Desktop for Windows
+          ]
