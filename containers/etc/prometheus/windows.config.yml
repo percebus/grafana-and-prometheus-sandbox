@@ -39,6 +39,13 @@ scrape_configs:
     static_configs:
       - targets: ["host.docker.internal:9323"]
 
+  - job_name: "vad-metrics"
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["host.docker.internal:9091"]
+
   - job_name: "prometheus"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
@@ -51,8 +58,8 @@ scrape_configs:
     static_configs:
       - targets: ["host.docker.internal:9093"] # Only works on Docker Desktop for Windows
 
-  - job_name: "vad-metrics"
+  - job_name: "grafana"
     # metrics_path defaults to '/metrics'
-    scrape_interval: 5s
+    # scheme defaults to 'http'.
     static_configs:
-      - targets: ["host.docker.internal:9091"]
+      - targets: ["host.docker.internal:3000"] # Only works on Docker Desktop for Windows
