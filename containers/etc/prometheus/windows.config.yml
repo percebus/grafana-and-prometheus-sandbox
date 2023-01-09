@@ -56,7 +56,7 @@ scrape_configs:
     static_configs:
       - targets: [
             "localhost:9090",
-            # "host.docker.internal:9090", # Only works on Docker Desktop for Windows
+            "host.docker.internal:9090", # Only works on Docker Desktop for Windows
           ]
 
   - job_name: "alertmanager"
@@ -64,8 +64,7 @@ scrape_configs:
     # scheme defaults to 'http'.
     static_configs:
       - targets: [
-            "localhost:9093",
-            # "host.docker.internal:9093", # Only works on Docker Desktop for Windows
+            "host.docker.internal:9093", # Only works on Docker Desktop for Windows
           ]
 
   - job_name: "grafana"
@@ -73,6 +72,5 @@ scrape_configs:
     # scheme defaults to 'http'.
     static_configs:
       - targets: [
-            "localhost:3000",
-            # "host.docker.internal:3000", # Only works on Docker Desktop for Windows
+            "host.docker.internal:3000", # Only works on Docker Desktop for Windows
           ]
