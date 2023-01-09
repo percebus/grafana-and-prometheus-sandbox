@@ -4,6 +4,8 @@
   "description": "grafana & prometheus playground sandbox",
   "main": "index.js",
   "scripts": {
+    "npm:install:global": "npm install --location=global open-cli",
+    "setup": "npm run npm:install:global",
     "bower:update": "bower update",
     "prebower:install": "npm run bower:update",
     "bower:install": "bower install",
@@ -16,6 +18,8 @@
     "docker:compose": "docker compose",
     "docker:compose:build": "npm run docker:compose -- build",
     "docker:compose:up": "npm run docker:compose -- up",
+    "open:grafana": "open-cli http://localhost:3000",
+    "open:prometheus": "open-cli http://localhost:9090",
     "test": "exit 0"
   },
   "repository": {
