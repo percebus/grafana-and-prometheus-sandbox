@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "npm:install:global": "npm install --location=global open-cli",
-    "setup": "npm run npm:install:global",
+    "go:get": "go get -v .",
+    "setup": "npm run go:get && npm run npm:install:global",
     "bower:update": "bower update",
     "prebower:install": "npm run bower:update",
     "bower:install": "bower install",

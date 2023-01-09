@@ -29,34 +29,44 @@ rule_files:
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: "prometheus"
+
+    # Override the global default
+    # and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+
+    static_configs:
+      - targets: ["localhost:9090"]
+
   # The job name is added as a label `job=<job_name>`
   # to any timeseries scraped from this config.
-  - job_name: "docker"
+  - job_name: "docker:engine"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     static_configs:
       - targets: ["host.docker.internal:9323"]
 
-  - job_name: "vad-metrics"
+  - job_name: "docker:vad-metrics"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     scrape_interval: 5s
     static_configs:
       - targets: ["host.docker.internal:9091"]
 
-  - job_name: "prometheus"
+  - job_name: "docker:prometheus"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     static_configs:
       - targets: ["host.docker.internal:9090"] # Only works on Docker Desktop for Windows
 
-  - job_name: "alertmanager"
+  - job_name: "docker:alertmanager"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     static_configs:
       - targets: ["host.docker.internal:9093"] # Only works on Docker Desktop for Windows
 
-  - job_name: "grafana"
+  - job_name: "docker:grafana"
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
     static_configs:
