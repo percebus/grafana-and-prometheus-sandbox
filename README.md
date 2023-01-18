@@ -1,5 +1,18 @@
 # grafana-and-prometheus-sandbox
 
+## Mosquitto
+
+Eclipse's lightweight MQTT Broker
+
+### Password
+
+```bash
+$> mosquitto_passwd \
+    -H sha512 \
+    -c -b /mosquitto/config/password.txt \
+    {username} {password}
+```
+
 ## References
 
 ### Articles

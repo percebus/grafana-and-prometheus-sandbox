@@ -1,5 +1,9 @@
 node_modules/
 bower_components/
 data/
+
 !sample.env
 .env
+
+# mosquitto
+password.txt
