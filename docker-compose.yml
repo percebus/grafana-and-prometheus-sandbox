@@ -36,24 +36,13 @@ services:
       - "--storage.tsdb.retention.time=200h"
       - "--web.enable-lifecycle"
 
-  # TODO move closer to MQTT Publisher
-  mosquitto:
-    image: eclipse-mosquitto:2
-    volumes:
-      - ./containers/mosquitto/config:/mosquitto/config
-      - ./data/mosquitto/data:/mosquitto/data
-      - ./data/mosquitto/log:/mosquitto/log
-    ports:
-      - 1883:1883
-      # - 9001:9001
-
   grafana:
     container_name: grafana
     hostname: grafana
     image: grafana/grafana
     depends_on:
       - prometheus
-      - mosquitto
+      # - mosquitto # Moved to a separate repo
     ports:
       - 3000:3000
     volumes:
