@@ -39,7 +39,7 @@ services:
   grafana:
     container_name: grafana
     hostname: grafana
-    image: grafana/grafana
+    image: grafana/grafana:latest
     depends_on:
       - prometheus
       # - mosquitto # Moved to a separate repo
