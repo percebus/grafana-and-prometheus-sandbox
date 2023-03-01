@@ -1,7 +1,7 @@
 {
   "name": "grafana-and-prometheus-sandbox",
   "devDependencies": {
-    "vegasbrianc_prometheus": "gitgit@github.com:vegasbrianc/prometheus.git#ae31b4743bf11a9ff59a88edc0197f36e2e3eb21",
+    "vegasbrianc_prometheus": "git@github.com:vegasbrianc/prometheus.git#ae31b4743bf11a9ff59a88edc0197f36e2e3eb21",
     "stefanprodan_docprom": "git@github.com:stefanprodan/dockprom.git#v5.4.0"
   }
 }

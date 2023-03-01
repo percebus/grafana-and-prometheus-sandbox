@@ -1,5 +1,10 @@
 version: "3"
 
+# SRC: https://earthly.dev/blog/docker-volumes/
+# volumes: # TODO?
+#   data_prometheus:
+#     external: true
+
 services:
   alertmanager:
     container_name: alertmanager
@@ -18,6 +23,10 @@ services:
     container_name: prometheus
     hostname: prometheus
     image: prom/prometheus:latest
+
+    # user: "${UID}:${UID}" # TODO?
+    user: root # XXX FIXME
+
     depends_on:
       - alertmanager
     links:
@@ -26,8 +35,10 @@ services:
       - 9090:9090
     volumes:
       # - ./containers:/ # TODO?
-      - ./containers/etc/prometheus:/etc/prometheus
+      - ./containers/etc/prometheus:/etc/prometheus # XXX?
+
       - ./data/prometheus:/prometheus
+      # - data_prometheus:/prometheus # TODO?
     command:
       - "--config.file=/etc/prometheus/windows.config.yml"
       - "--storage.tsdb.path=/prometheus"
